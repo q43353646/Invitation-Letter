@@ -4,23 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>AI采购穿透式监管一体化解决方案 · 发布会邀请函</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%233b82f6'/></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%238b5cf6'/></svg>">
 <link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap">
 <style>
 /* ========== 基础 & 设计 token ========== */
 :root{
-  --bg-0:#060d1f;
-  --bg-1:#0b1a36;
-  --bg-2:#10254d;
-  --line:rgba(96,165,250,.18);
-  --line-strong:rgba(96,165,250,.45);
-  --text-0:#f1f5ff;
-  --text-1:#c7d5ee;
-  --text-2:#7d8fb3;
-  --accent:#3b82f6;
+  --bg-0:#04030e;
+  --bg-1:#0b0a26;
+  --bg-2:#171040;
+  --line:rgba(167,139,250,.18);
+  --line-strong:rgba(167,139,250,.45);
+  --text-0:#f3f0ff;
+  --text-1:#cfc6ee;
+  --text-2:#8d84b3;
+  --accent:#8b5cf6;
   --accent-2:#22d3ee;
-  --accent-3:#60a5fa;
-  --gold:#f0b96b;
+  --accent-3:#a78bfa;
+  --gold:#d8b4fe;
   --danger:#f87171;
   --ok:#34d399;
   --safe-b:env(safe-area-inset-bottom,0px);
@@ -48,7 +48,7 @@ input{font-family:inherit;}
   scroll-snap-type:y mandatory;
   scroll-behavior:smooth;
   background:
-    radial-gradient(1200px 600px at 80% -10%, rgba(59,130,246,.25), transparent 60%),
+    radial-gradient(1200px 600px at 80% -10%, rgba(139,92,246,.25), transparent 60%),
     radial-gradient(900px 500px at -10% 110%, rgba(34,211,238,.15), transparent 60%),
     var(--bg-0);
 }
@@ -67,8 +67,8 @@ input{font-family:inherit;}
 .grid-bg{
   position:absolute;inset:0;pointer-events:none;
   background-image:
-    linear-gradient(rgba(96,165,250,.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(96,165,250,.05) 1px, transparent 1px);
+    linear-gradient(rgba(167,139,250,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(167,139,250,.05) 1px, transparent 1px);
   background-size:36px 36px;
   mask-image:radial-gradient(ellipse at center, #000 30%, transparent 75%);
 }
@@ -79,55 +79,84 @@ input{font-family:inherit;}
   display:inline-flex;align-items:center;gap:6px;
   padding:5px 12px;border:1px solid var(--line-strong);
   border-radius:999px;font-size:11px;letter-spacing:2px;color:var(--accent-3);
-  background:rgba(59,130,246,.08);
+  background:rgba(139,92,246,.08);
 }
 .tag .dot{width:5px;height:5px;border-radius:50%;background:var(--accent-2);box-shadow:0 0 8px var(--accent-2);}
 
 /* ============================================================
-   Page 1 · 封面
+   Page 1 · 封面（参考深紫夜空 + 无限光环版式）
 ============================================================ */
 #page-cover{
-  display:flex;flex-direction:column;justify-content:space-between;
-  padding:calc(40px + var(--safe-t)) 28px calc(28px + var(--safe-b));
+  display:flex;flex-direction:column;
+  padding:calc(26px + var(--safe-t)) 22px calc(64px + var(--safe-b));
   text-align:center;
 }
-/* 预留：封面底图地址 —— 把 url 换成你的封面图 */
-/* IMG: cover-bg  url("assets/cover-bg.jpg") */
 .cover-bg{
   position:absolute;inset:0;
   background:
-    linear-gradient(180deg, rgba(6,13,31,.4) 0%, rgba(6,13,31,.85) 100%),
-    radial-gradient(ellipse at 50% 30%, rgba(59,130,246,.35), transparent 60%),
-    var(--bg-1);
+    radial-gradient(120% 50% at 50% 0%, rgba(124,58,237,.26), transparent 60%),
+    radial-gradient(150% 62% at 50% 102%, rgba(109,40,217,.55), transparent 68%),
+    linear-gradient(180deg,#04030e 0%, #0b0a26 52%, #171040 100%);
   z-index:0;
 }
 .cover-inner{position:relative;z-index:2;display:flex;flex-direction:column;height:100%;}
-.cover-top{display:flex;justify-content:center;}
+/* 左上角品牌：中英文等宽、两端对齐 */
 .cover-brand{
-  font-size:12px;letter-spacing:4px;color:var(--text-1);
-  display:flex;align-items:center;gap:10px;
+  flex:0 0 auto;
+  display:flex;flex-direction:column;align-items:stretch;gap:5px;
+  width:104px;color:#fff;
 }
-.cover-brand::before,.cover-brand::after{
-  content:"";width:24px;height:1px;background:var(--line-strong);
+.cover-brand b{display:flex;justify-content:space-between;font-weight:700;}
+.cover-brand .cn{font-size:17px;letter-spacing:0;}
+.cover-brand .en{font-size:9.5px;font-weight:400;color:var(--text-2);}
+.cover-brand .en .gap{opacity:0;}
+/* 中部：光环主视觉 + 活动名 + 邀请函题头 */
+.cover-mid{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;gap:10px;}
+.cover-hero{position:relative;width:100%;max-width:400px;margin:0 auto;}
+.cover-hero svg{width:100%;height:auto;display:block;}
+.hero-text{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.hero-en{
+  font-family:Georgia,"Times New Roman",serif;font-style:italic;font-weight:700;
+  font-size:clamp(24px,7.5vw,38px);color:#fff;
+  text-shadow:0 0 20px rgba(167,139,250,.9),0 0 46px rgba(139,92,246,.55);
 }
-.cover-mid{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:22px;}
-.cover-title{
-  font-size:30px;font-weight:900;line-height:1.35;letter-spacing:1px;
-  background:linear-gradient(180deg,#fff 0%, #9cc4ff 100%);
+.hero-cn{
+  font-size:clamp(30px,9.5vw,46px);font-weight:900;letter-spacing:3px;line-height:1.2;
+  background:linear-gradient(180deg,#ffffff 20%,#c4b5fd 100%);
   -webkit-background-clip:text;background-clip:text;color:transparent;
+  text-shadow:0 0 30px rgba(139,92,246,.35);
 }
-.cover-title .sub{display:block;font-size:16px;font-weight:500;color:var(--accent-3);margin-top:10px;letter-spacing:6px;}
-.cover-date{
-  font-size:14px;color:var(--text-1);letter-spacing:3px;
-  padding:10px 22px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+.evt-name{font-size:13.5px;color:#e9e4ff;letter-spacing:1px;font-weight:500;}
+.evt-sub{margin-top:5px;font-size:11px;letter-spacing:5px;color:var(--text-2);}
+.cover-invite{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:8px;}
+.cover-invite .line{flex:0 1 72px;height:1px;background:linear-gradient(90deg,transparent,rgba(167,139,250,.75));}
+.cover-invite .line:last-child{background:linear-gradient(90deg,rgba(167,139,250,.75),transparent);}
+.inv-text b{display:block;font-size:25px;letter-spacing:10px;text-indent:10px;color:#fff;font-weight:700;text-shadow:0 0 26px rgba(139,92,246,.85);}
+.inv-text i{display:block;font-style:normal;font-size:10px;letter-spacing:7px;text-indent:7px;color:#a78bfa;margin-top:5px;}
+/* 下部：slogan + 描述 + 邀约 + 信息卡 */
+.cover-bottom{flex:0 0 auto;display:flex;flex-direction:column;}
+.cover-slogan{font-size:13px;letter-spacing:2.5px;color:#ddd6fe;}
+.cover-desc{margin-top:9px;font-size:12px;line-height:1.95;color:var(--text-1);letter-spacing:1px;}
+.cover-cta{margin-top:11px;font-size:15px;font-weight:700;letter-spacing:1px;color:#fff;}
+.cover-cta b{color:#a78bfa;margin:0 9px;font-weight:400;}
+.cover-info{
+  margin-top:13px;text-align:left;padding:13px 16px;border-radius:14px;
+  border:1px solid rgba(139,92,246,.35);
+  background:linear-gradient(160deg,rgba(35,22,80,.5),rgba(9,7,28,.42));
+  backdrop-filter:blur(6px);
+  display:flex;flex-direction:column;gap:10px;
 }
-.cover-date b{color:#fff;font-weight:700;font-size:18px;letter-spacing:2px;}
+.cover-info .row{display:flex;align-items:flex-start;gap:10px;}
+.cover-info svg{width:17px;height:17px;flex:0 0 17px;margin-top:3px;stroke:#a78bfa;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.cover-info .k{font-size:10.5px;color:var(--text-2);letter-spacing:2.5px;}
+.cover-info .v{font-size:13px;color:#fff;font-weight:500;margin-top:2px;line-height:1.5;}
 .cover-scroll{
+  flex:0 0 auto;margin-top:12px;
   display:flex;flex-direction:column;align-items:center;gap:8px;
   color:var(--text-2);font-size:12px;letter-spacing:4px;
 }
 .cover-scroll .arrow{
-  width:22px;height:22px;border-right:2px solid var(--accent-3);border-top:2px solid var(--accent-3);
+  width:22px;height:22px;border-right:2px solid #a78bfa;border-top:2px solid #a78bfa;
   transform:rotate(-45deg);animation:bounce 1.8s infinite ease-in-out;
 }
 @keyframes bounce{
@@ -147,6 +176,49 @@ input{font-family:inherit;}
 }
 
 /* ============================================================
+   Page · 诚挚邀请（正文信笺页，版式参考海报：纯色底 / 大留白）
+============================================================ */
+#page-invite{
+  display:flex;flex-direction:column;align-items:center;
+  background:#0b0a26;
+  padding:calc(9vh + var(--safe-t)) clamp(30px,9vw,56px) calc(64px + var(--safe-b));
+  overflow:hidden;
+}
+.inv-en-title{
+  font-size:clamp(15px,4.6vw,22px);letter-spacing:clamp(5px,2.4vw,11px);
+  text-indent:clamp(5px,2.4vw,11px);
+  color:#fff;font-weight:300;white-space:nowrap;
+}
+.inv-cn-title{
+  display:flex;align-items:center;justify-content:center;gap:clamp(8px,2.6vw,14px);
+  margin-top:clamp(12px,3vh,22px);white-space:nowrap;
+}
+.inv-cn-title .line{flex:0 1 clamp(26px,9vw,46px);height:3px;border-radius:3px;background:linear-gradient(90deg,transparent,#22d3ee);}
+.inv-cn-title .line:last-child{background:linear-gradient(90deg,#a78bfa,transparent);}
+.inv-cn-title b{
+  flex:0 0 auto;
+  font-size:clamp(20px,6vw,25px);font-weight:900;
+  letter-spacing:clamp(4px,1.8vw,9px);text-indent:clamp(4px,1.8vw,9px);
+  background:linear-gradient(90deg,#34d399 0%,#22d3ee 55%,#a78bfa 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.inv-body{
+  margin-top:clamp(16px,3.5vh,30px);width:100%;max-width:520px;flex:0 1 auto;min-height:0;
+  font-size:clamp(12.5px,3.6vw,14px);line-height:1.95;color:#eef0ff;letter-spacing:.5px;
+  text-align:left;overflow:hidden;
+}
+.inv-body p{text-indent:2em;margin-bottom:3px;}
+.inv-body p.salute{text-indent:0;color:#fff;font-weight:500;}
+.inv-body .kv{color:#ddd6fe;}
+.inv-body .kv b{color:#fff;font-weight:500;}
+/* 落款位于正文结束约三行文字之后，随屏高自适应 */
+.inv-sign{
+  margin-top:clamp(30px,5.2vh,84px);
+  width:100%;max-width:520px;text-align:right;
+  font-size:clamp(12.5px,3.6vw,14px);color:#fff;font-weight:700;letter-spacing:2px;line-height:1.8;
+}
+
+/* ============================================================
    Page 2 · 详情（内部纵向滚动，4 子屏）
 ============================================================ */
 #page-detail{padding:0;}
@@ -154,7 +226,7 @@ input{font-family:inherit;}
   height:100%;width:100%;overflow-y:auto;
   scroll-snap-type:y mandatory;
   scroll-behavior:smooth;
-  overscroll-behavior:contain; /* 滚到边界不穿透到外层 deck */
+  overscroll-behavior:auto; /* 到顶下滑/到底上滑可穿透到外层，支持退回上一页 */
 }
 .snap-screen.center-screen{justify-content:center;}
 .snap-screen.center-screen .agenda-list{flex:0 1 auto;}
@@ -179,7 +251,7 @@ input{font-family:inherit;}
 .agenda-item{
   display:grid;grid-template-columns:62px 18px 1fr;align-items:center;gap:12px;
   padding:14px 14px;border-radius:12px;
-  background:linear-gradient(135deg, rgba(59,130,246,.10), rgba(16,37,77,.4));
+  background:linear-gradient(135deg, rgba(139,92,246,.10), rgba(23,16,64,.4));
   border:1px solid var(--line);
 }
 .agenda-item .time{font-size:13px;color:var(--accent-3);font-weight:700;font-variant-numeric:tabular-nums;}
@@ -188,12 +260,12 @@ input{font-family:inherit;}
   box-shadow:0 0 10px var(--accent-2);justify-self:center;
 }
 .agenda-item .name{font-size:13.5px;color:var(--text-0);line-height:1.4;}
-.agenda-item.start{border-color:var(--line-strong);background:linear-gradient(135deg, rgba(240,185,107,.12), rgba(16,37,77,.4));}
+.agenda-item.start{border-color:var(--line-strong);background:linear-gradient(135deg, rgba(216,180,254,.12), rgba(23,16,64,.4));}
 .agenda-item.start .time{color:var(--gold);}
 .agenda-item.end{opacity:.7;}
 .agenda-meta{
   margin-bottom:14px;padding:14px 16px;border-radius:12px;
-  background:rgba(59,130,246,.08);border:1px solid var(--line);
+  background:rgba(139,92,246,.08);border:1px solid var(--line);
 }
 .agenda-meta .row{display:flex;justify-content:space-between;font-size:12.5px;color:var(--text-1);padding:3px 0;}
 .agenda-meta .row b{color:#fff;font-weight:500;}
@@ -204,7 +276,7 @@ input{font-family:inherit;}
 }
 .search-bar input{
   flex:1;padding:11px 14px;border-radius:8px;
-  background:rgba(16,37,77,.5);border:1px solid var(--line);
+  background:rgba(23,16,64,.5);border:1px solid var(--line);
   color:#fff;font-size:13px;outline:none;
 }
 .search-bar input::placeholder{color:var(--text-2);}
@@ -216,18 +288,18 @@ input{font-family:inherit;}
 #map-container{
   flex:0 0 34%;width:100%;border-radius:12px;overflow:hidden;
   border:1px solid var(--line-strong);min-height:0;position:relative;
-  background:#0e1c3a;
+  background:#120e2e;
 }
 .map-tip{
   position:absolute;left:12px;bottom:12px;z-index:10;
-  background:rgba(6,13,31,.85);backdrop-filter:blur(8px);
+  background:rgba(4,3,14,.85);backdrop-filter:blur(8px);
   padding:8px 12px;border-radius:8px;font-size:11px;color:var(--text-1);
   border:1px solid var(--line);max-width:80%;
 }
 .map-actions{display:flex;gap:10px;margin-top:10px;}
 .btn-mini{
   flex:1;padding:11px;border-radius:10px;font-size:13px;
-  background:rgba(59,130,246,.15);color:#fff;border:1px solid var(--line-strong);
+  background:rgba(139,92,246,.15);color:#fff;border:1px solid var(--line-strong);
 }
 .btn-mini:active{transform:scale(.98);}
 
@@ -235,8 +307,8 @@ input{font-family:inherit;}
 .venue-map{
   flex:1;border-radius:12px;border:1px dashed var(--line-strong);
   background:
-    repeating-linear-gradient(45deg, rgba(96,165,250,.05) 0 10px, transparent 10px 20px),
-    rgba(16,37,77,.4);
+    repeating-linear-gradient(45deg, rgba(167,139,250,.05) 0 10px, transparent 10px 20px),
+    rgba(23,16,64,.4);
   display:flex;align-items:center;justify-content:center;
   color:var(--text-2);font-size:12px;letter-spacing:2px;
   min-height:0;position:relative;overflow:hidden;margin:10px 0;
@@ -244,11 +316,11 @@ input{font-family:inherit;}
 .venue-map .placeholder{text-align:center;line-height:2;}
 .venue-map .placeholder b{color:var(--accent-3);font-weight:500;}
 .two-cards{
-  display:grid;grid-template-columns:1fr 1fr;gap:10px;flex:0 0 auto;
+  display:grid;grid-template-columns:1fr 1fr;gap:10px;flex:0 0 auto;margin-top:10px;
 }
 .two-cards .card{
   padding:14px 10px;border-radius:10px;text-align:center;
-  background:rgba(59,130,246,.08);border:1px solid var(--line);
+  background:rgba(139,92,246,.08);border:1px solid var(--line);
 }
 .two-cards .card .label{font-size:13px;color:#fff;font-weight:500;margin-bottom:6px;}
 .two-cards .card .desc{font-size:11px;color:var(--text-2);line-height:1.5;}
@@ -268,7 +340,7 @@ input{font-family:inherit;}
   width:100%;max-width:300px;padding:16px;border-radius:999px;
   background:linear-gradient(90deg,var(--accent),var(--accent-2));
   color:#fff;font-size:15px;font-weight:700;letter-spacing:4px;
-  box-shadow:0 8px 30px rgba(59,130,246,.45);
+  box-shadow:0 8px 30px rgba(139,92,246,.45);
   transition:transform .15s;
 }
 .btn-primary:active{transform:scale(.97);}
@@ -284,7 +356,7 @@ input{font-family:inherit;}
 .form-banner{
   height:140px;border-radius:14px;margin-bottom:20px;
   background:
-    linear-gradient(135deg, rgba(59,130,246,.35), rgba(34,211,238,.15)),
+    linear-gradient(135deg, rgba(139,92,246,.35), rgba(34,211,238,.15)),
     var(--bg-2);
   border:1px solid var(--line);
   display:flex;align-items:center;justify-content:center;
@@ -299,7 +371,7 @@ input{font-family:inherit;}
 .field label .req{color:var(--danger);margin-left:3px;}
 .field input{
   width:100%;padding:14px 16px;border-radius:10px;
-  background:rgba(16,37,77,.5);border:1px solid var(--line);
+  background:rgba(23,16,64,.5);border:1px solid var(--line);
   color:#fff;font-size:16px;outline:none;
   transition:border-color .2s;
 }
@@ -308,12 +380,12 @@ input{font-family:inherit;}
 .radio-row{display:flex;gap:10px;}
 .radio-row .opt{
   flex:1;padding:13px;text-align:center;border-radius:10px;
-  background:rgba(16,37,77,.5);border:1px solid var(--line);
+  background:rgba(23,16,64,.5);border:1px solid var(--line);
   font-size:14px;color:var(--text-1);cursor:pointer;
   transition:all .2s;
 }
 .radio-row .opt.on{
-  background:rgba(59,130,246,.2);border-color:var(--accent-3);color:#fff;
+  background:rgba(139,92,246,.2);border-color:var(--accent-3);color:#fff;
 }
 #plate-field{display:none;}
 #plate-field.show{display:block;animation:fadeIn .3s;}
@@ -336,7 +408,7 @@ input{font-family:inherit;}
 .thanks-bg{
   position:absolute;inset:0;
   background:
-    radial-gradient(ellipse at center, rgba(59,130,246,.35), transparent 65%),
+    radial-gradient(ellipse at center, rgba(139,92,246,.35), transparent 65%),
     var(--bg-1);
   z-index:0;
 }
@@ -345,7 +417,7 @@ input{font-family:inherit;}
   width:64px;height:64px;border-radius:50%;margin:0 auto 24px;
   background:linear-gradient(135deg,var(--accent),var(--accent-2));
   display:flex;align-items:center;justify-content:center;
-  box-shadow:0 0 40px rgba(59,130,246,.6);
+  box-shadow:0 0 40px rgba(139,92,246,.6);
 }
 .thanks-mark svg{width:32px;height:32px;stroke:#fff;stroke-width:3;fill:none;}
 .thanks-title{font-size:24px;font-weight:700;line-height:1.5;margin-bottom:12px;}
@@ -354,7 +426,7 @@ input{font-family:inherit;}
 /* toast */
 .toast{
   position:fixed;left:50%;bottom:120px;transform:translateX(-50%);
-  background:rgba(6,13,31,.92);color:#fff;padding:12px 20px;border-radius:10px;
+  background:rgba(4,3,14,.92);color:#fff;padding:12px 20px;border-radius:10px;
   font-size:13px;z-index:999;opacity:0;pointer-events:none;
   transition:opacity .25s;border:1px solid var(--line-strong);
   max-width:80%;text-align:center;
@@ -363,6 +435,27 @@ input{font-family:inherit;}
 
 /* 高德 logo 深色适配 */
 .amap-logo,.amap-copyright{opacity:.5;}
+
+/* ============================================================
+   全屏浮层：报名表单 / 感谢页
+   —— 覆盖在翻书容器之上，打开后无法上滑返回上一页
+   —— 打开动画为「两侧拉开」（幕布从中间向两边展开）
+============================================================ */
+.overlay{
+  position:fixed;inset:0;z-index:60;display:none;
+  background:var(--bg-0);overflow:hidden;
+}
+.overlay > section{
+  height:100%;position:relative;overflow:hidden;
+}
+.overlay.open{display:block;animation:curtain-open .65s cubic-bezier(.72,0,.28,1) both;}
+@keyframes curtain-open{
+  from{clip-path:inset(0 50% 0 50%);}
+  to{clip-path:inset(0 0 0 0);}
+}
+.overlay.open.fade{animation:fade-in .45s ease both;}
+@keyframes fade-in{from{opacity:0;}to{opacity:1;}}
+#page-form,#page-thanks{padding:0;}
 </style>
 </head>
 <body>
@@ -372,19 +465,65 @@ input{font-family:inherit;}
   <!-- ==================== Page 1 封面 ==================== -->
   <section class="page" id="page-cover">
     <div class="cover-bg"></div>
-    <div class="grid-bg"></div>
     <div class="cover-inner">
-      <div class="cover-top">
-        <div class="cover-brand">中资数据科技有限公司 · 诚挚邀请</div>
+      <div class="cover-brand">
+        <b class="cn"><span>中</span><span>资</span><span>数</span><span>据</span></b>
+        <b class="en"><span>Z</span><span>H</span><span>O</span><span>N</span><span>G</span><span>-</span><span>Z</span><span>I</span><span class="gap">·</span><span>D</span><span>A</span><span>T</span><span>A</span></b>
       </div>
       <div class="cover-mid">
-        <span class="tag"><span class="dot"></span>NEW PRODUCT LAUNCH</span>
-        <div class="cover-title">
-          《AI 采购穿透式监管<br>一体化解决方案》
-          <span class="sub">发 布 会</span>
+        <div class="cover-hero">
+          <!-- 无限符号光环（参考海报主视觉；如后续有官方图，替换此 svg 为 img 即可） -->
+          <svg viewBox="0 0 400 210" aria-hidden="true">
+            <defs>
+              <linearGradient id="loop-g1" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#8b5cf6"/><stop offset="1" stop-color="#e879f9"/>
+              </linearGradient>
+              <linearGradient id="loop-g2" x1="1" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#818cf8"/><stop offset="1" stop-color="#38bdf8"/>
+              </linearGradient>
+              <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+                <feGaussianBlur stdDeviation="7" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+            <g fill="none" stroke-linecap="round" filter="url(#glow)">
+              <path d="M200,105 C150,25 55,35 55,105 C55,175 150,185 200,105 C250,25 345,35 345,105 C345,175 250,185 200,105 Z" stroke="url(#loop-g1)" stroke-width="10" opacity=".9"/>
+              <path d="M200,105 C150,25 55,35 55,105 C55,175 150,185 200,105 C250,25 345,35 345,105 C345,175 250,185 200,105 Z" stroke="url(#loop-g2)" stroke-width="3" opacity=".95"/>
+              <path d="M200,105 C160,45 75,50 70,105" stroke="#c4b5fd" stroke-width="1.6" opacity=".7"/>
+              <path d="M200,105 C240,165 325,160 330,105" stroke="#93c5fd" stroke-width="1.6" opacity=".7"/>
+            </g>
+            <g fill="#fff">
+              <circle cx="88" cy="58" r="1.4" opacity=".85"/><circle cx="312" cy="150" r="1.4" opacity=".85"/>
+              <circle cx="150" cy="30" r="1" opacity=".6"/><circle cx="262" cy="182" r="1" opacity=".6"/>
+              <circle cx="340" cy="60" r="1.1" opacity=".7"/><circle cx="58" cy="148" r="1.1" opacity=".7"/>
+            </g>
+          </svg>
+          <div class="hero-text">
+            <div class="hero-en">Apeiron</div>
+            <div class="hero-cn">AI赋能监管</div>
+          </div>
         </div>
-        <div class="cover-date">
-          <b>2026.11.19</b> &nbsp;|&nbsp; 北京 · 京丰宾馆
+        <div class="evt-name">《AI采购穿透式监管一体化解决方案》发布会</div>
+        <div class="evt-sub">重 新 定 义 “ 监 管 ” 这 件 事</div>
+        <div class="cover-invite">
+          <span class="line"></span>
+          <div class="inv-text"><b>邀请函</b><i>INVITATION</i></div>
+          <span class="line"></span>
+        </div>
+      </div>
+      <div class="cover-bottom">
+        <div class="cover-slogan">监管从不缺席，只是等待被智能唤醒</div>
+        <div class="cover-desc">以 Apeiron 承载无限数据空间<br>唤醒下一代随身 AI 监管助手</div>
+        <div class="cover-cta">诚挚邀请您<b>|</b>共赴智慧监管之约</div>
+        <div class="cover-info">
+          <div class="row">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+            <div><div class="k">发布时间</div><div class="v">2026.11.19（周四）13:00 – 15:30</div></div>
+          </div>
+          <div class="row">
+            <svg viewBox="0 0 24 24"><path d="M12 21s-7-5.6-7-11a7 7 0 1 1 14 0c0 5.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
+            <div><div class="k">活动地点</div><div class="v">北京 · 京丰宾馆（丰台区西四环南路61号）</div></div>
+          </div>
         </div>
       </div>
       <div class="cover-scroll">
@@ -392,6 +531,21 @@ input{font-family:inherit;}
         <div class="arrow"></div>
       </div>
     </div>
+  </section>
+
+  <!-- ==================== Page 1.5 诚挚邀请 ==================== -->
+  <section class="page" id="page-invite">
+    <div class="inv-en-title">I N V I T A T I O N</div>
+    <div class="inv-cn-title"><span class="line"></span><b>诚挚邀请</b><span class="line"></span></div>
+    <div class="inv-body">
+      <p class="salute">尊敬的嘉宾：</p>
+      <p>您好！</p>
+      <p>人工智能正在重塑千行百业，采购监管也走到了数智化变革的关口。中资数据科技有限公司融合下一代 AI 能力，倾力打造《AI 采购穿透式监管一体化解决方案》，重新定义"监管"这件事。</p>
+      <p>发布会当日，Apeiron 技术底座、寻源询价 AI 版、电商基准价、联合海光一体机与绿色低碳方案将依次亮相，与行业专家共同探索智慧监管的新路径。</p>
+      <p>发布会定于<span class="kv"><b>2026年11月19日（周四）13:00—15:30</b></span>在<span class="kv"><b>北京·京丰宾馆</b></span>举行。诚挚邀请您拨冗莅临，共赴智慧监管之约！</p>
+    </div>
+    <div class="inv-sign">中资数据科技有限公司<br><span style="font-weight:400;font-size:12px;color:var(--text-2)">2026年11月</span></div>
+    <div class="swipe-hint"><div>请向上滑动</div><div class="arrow"></div></div>
   </section>
 
   <!-- ==================== Page 2 详情 ==================== -->
@@ -455,13 +609,6 @@ input{font-family:inherit;}
         <div id="map-container">
           <div class="map-tip">地图加载中…</div>
         </div>
-        <div class="venue-map">
-          <div class="placeholder">
-            【预留 · 场地布局图】<br>
-            <b>替换为你的场地平面图片</b><br>
-            建议标注：正门入口 · 停车位 P · 电梯厅
-          </div>
-        </div>
         <div class="two-cards">
           <div class="card">
             <div class="label">公共交通</div>
@@ -472,6 +619,13 @@ input{font-family:inherit;}
             <div class="desc">西四环南路 61 号<br>宾馆院内停车</div>
           </div>
         </div>
+        <div class="venue-map">
+          <div class="placeholder">
+            【预留 · 场地布局图】<br>
+            <b>替换为你的场地平面图片</b><br>
+            建议标注：正门入口 · 停车位 P · 电梯厅
+          </div>
+        </div>
         <div class="swipe-hint"><div>请向上滑动</div><div class="arrow"></div></div>
       </div>
 
@@ -479,13 +633,16 @@ input{font-family:inherit;}
       <div class="snap-screen cta-screen">
         <span class="tag"><span class="dot"></span>RESERVATION</span>
         <div class="big">席位有限<br><span>诚邀您莅临现场</span></div>
-        <button class="btn-primary" onclick="goTo(2)">立即报名</button>
+        <button class="btn-primary" onclick="openForm()">立即报名</button>
       </div>
 
     </div>
   </section>
 
-  <!-- ==================== Page 3 表单 ==================== -->
+</div>
+
+<div class="overlay" id="form-overlay">
+  <!-- ==================== Page 3 表单（覆盖浮层） ==================== -->
   <section class="page" id="page-form">
     <div class="form-scroll">
       <div class="form-wrap">
@@ -536,8 +693,10 @@ input{font-family:inherit;}
       </div>
     </div>
   </section>
+</div>
 
-  <!-- ==================== Page 4 感谢页 ==================== -->
+<div class="overlay" id="thanks-overlay">
+  <!-- ==================== Page 4 感谢页（覆盖浮层） ==================== -->
   <section class="page" id="page-thanks">
     <div class="thanks-bg"></div>
     <div class="grid-bg"></div>
@@ -564,18 +723,53 @@ input{font-family:inherit;}
 ============================================================ */
 const CONFIG = {
   AMAP_KEY: 'd3dacc1b92fdb39c5de351c86b3526f6',
+  // ★必填：高德「安全密钥」（securityJsCode）。获取方式：登录 console.amap.com →
+  // 应用管理 → 找到上面这个 Key → 详情 →「安全密钥」栏复制后粘贴到这里。
+  // 不填时地图底图能显示，但搜索地址会报 INVALID_USER_SCODE（即“找不到地点”）。
+  AMAP_SECURITY_CODE: 'abd792145055b583ed30e832c87b2d5d',
   MEETING_KEYWORD: '北京丰台区西四环南路61号京丰宾馆',
   // 预留：表单提交接口，当前仅存 localStorage
   SUBMIT_URL: ''
 };
 
+// 高德 JS API 2.0 要求：加载脚本前先声明安全密钥
+if (CONFIG.AMAP_SECURITY_CODE) {
+  window._AMapSecurityConfig = { securityJsCode: CONFIG.AMAP_SECURITY_CODE };
+}
+
 /* ============================================================
-   主容器翻页控制（4 个主页面）
+   主容器翻页控制（deck 内只剩 2 个滑动页面：封面、详情）
 ============================================================ */
 const deck = document.getElementById('deck');
-const pages = document.querySelectorAll('.page');
+const pages = deck.querySelectorAll('.page');
 function goTo(idx){
   pages[idx].scrollIntoView({behavior:'smooth'});
+}
+
+/* ============================================================
+   全屏浮层控制：表单（两侧拉开）/ 感谢页（淡入）
+   —— 表单提交后关闭浮层，禁止上滑返回表单页
+============================================================ */
+const formOverlay = document.getElementById('form-overlay');
+const thanksOverlay = document.getElementById('thanks-overlay');
+
+function openForm(){
+  thanksOverlay.classList.remove('open','fade');
+  thanksOverlay.style.display = 'none';
+  formOverlay.classList.remove('open','fade');
+  void formOverlay.offsetWidth;           // 重置动画
+  formOverlay.style.display = 'block';
+  formOverlay.classList.add('open');      // 幕布从中间向两侧拉开
+  formOverlay.scrollTop = 0;
+}
+
+function openThanks(){
+  formOverlay.classList.remove('open','fade');
+  formOverlay.style.display = 'none';     // 表单页即关闭，无法返回
+  thanksOverlay.classList.remove('open','fade');
+  void thanksOverlay.offsetWidth;
+  thanksOverlay.style.display = 'block';
+  thanksOverlay.classList.add('open','fade'); // 感谢页淡入，不沿用滑动效果
 }
 
 /* ============================================================
@@ -618,7 +812,8 @@ function searchPlace(keyword){
       lastMarker = new AMap.Marker({position: meetingLngLat, map: mapInstance});
       tip.innerHTML = '<b style="color:#fff">'+poi.name+'</b><br>'+(poi.address||'');
     }else{
-      tip.textContent = '未找到「'+keyword+'」，请换个关键词';
+      const info = (result && (result.info || result.message)) || (typeof result === 'string' ? result : '');
+      tip.textContent = '未找到「'+keyword+'」（'+status+(info? ' · '+info : '')+'）';
     }
   });
 }
@@ -718,7 +913,7 @@ function submitForm(){
   }
 
   showToast('报名成功');
-  setTimeout(()=>goTo(3), 400);
+  setTimeout(()=>openThanks(), 400);
 }
 </script>
 </body>
