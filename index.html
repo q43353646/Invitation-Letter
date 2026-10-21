@@ -250,7 +250,7 @@ input{font-family:inherit;}
 .agenda-list{flex:1;display:flex;flex-direction:column;gap:10px;overflow:auto;}
 .agenda-item{
   display:grid;grid-template-columns:62px 18px 1fr;align-items:center;gap:12px;
-  padding:14px 14px;border-radius:12px;
+  padding:14px;border-radius:12px;min-height:64px;
   background:linear-gradient(135deg, rgba(139,92,246,.10), rgba(23,16,64,.4));
   border:1px solid var(--line);
   cursor:pointer;transition:border-color .2s, background .2s;
@@ -770,7 +770,9 @@ function openThanks(){
    日程项点击展开/收起详情
 ============================================================ */
 function toggleAgenda(el){
-  el.classList.toggle('open');
+  const wasOpen = el.classList.contains('open');
+  document.querySelectorAll('.agenda-item.open').forEach(o=>o.classList.remove('open'));
+  if(!wasOpen) el.classList.add('open');
 }
 
 /* ============================================================
