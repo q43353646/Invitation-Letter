@@ -236,8 +236,9 @@ input{font-family:inherit;}
   height:100vh;height:100dvh;
   scroll-snap-align:start;scroll-snap-stop:always;
   position:relative;
-  padding:calc(24px + var(--safe-t)) 24px calc(24px + var(--safe-b));
+  padding:calc(20px + var(--safe-t)) 18px calc(20px + var(--safe-b));
   display:flex;flex-direction:column;
+  overflow:hidden;
 }
 .snap-screen .header{
   display:flex;align-items:center;justify-content:space-between;
@@ -249,22 +250,22 @@ input{font-family:inherit;}
 .snap-screen .header .pageno{font-size:11px;color:var(--text-2);letter-spacing:2px;}
 
 /* --- 子屏 1：日程 --- */
-.agenda-list{flex:1;display:flex;flex-direction:column;gap:10px;overflow:auto;}
+.agenda-list{flex:1;display:flex;flex-direction:column;gap:7px;overflow:auto;min-height:0;}
 .agenda-item{
-  display:grid;grid-template-columns:62px 18px 1fr;align-items:center;gap:12px;
-  padding:14px;border-radius:12px;min-height:64px;
+  display:grid;grid-template-columns:54px 14px 1fr;align-items:center;gap:10px;
+  padding:10px 12px;border-radius:10px;min-height:54px;
   background:linear-gradient(135deg, rgba(139,92,246,.10), rgba(23,16,64,.4));
   border:1px solid var(--line);
   cursor:pointer;transition:border-color .2s, background .2s;
 }
 .agenda-item:active{transform:scale(.99);}
 .agenda-item.open{border-color:var(--accent-3);background:linear-gradient(135deg, rgba(139,92,246,.22), rgba(23,16,64,.5));}
-.agenda-item .time{font-size:13px;color:var(--accent-3);font-weight:700;font-variant-numeric:tabular-nums;}
+.agenda-item .time{font-size:12.5px;color:var(--accent-3);font-weight:700;font-variant-numeric:tabular-nums;}
 .agenda-item .dot{
-  width:8px;height:8px;border-radius:50%;background:var(--accent-2);
-  box-shadow:0 0 10px var(--accent-2);justify-self:center;
+  width:7px;height:7px;border-radius:50%;background:var(--accent-2);
+  box-shadow:0 0 8px var(--accent-2);justify-self:center;
 }
-.agenda-item .name{font-size:13.5px;color:var(--text-0);line-height:1.4;}
+.agenda-item .name{font-size:13px;color:var(--text-0);line-height:1.35;}
 .agenda-detail{
   grid-column:1 / -1;display:none;
   margin-top:10px;padding:10px 12px;border-radius:8px;
@@ -276,10 +277,10 @@ input{font-family:inherit;}
 .agenda-item.start .time{color:var(--gold);}
 .agenda-item.end{opacity:.7;}
 .agenda-meta{
-  margin-bottom:14px;padding:14px 16px;border-radius:12px;
+  margin-bottom:10px;padding:10px 14px;border-radius:10px;
   background:rgba(139,92,246,.08);border:1px solid var(--line);
 }
-.agenda-meta .row{display:flex;justify-content:space-between;font-size:12.5px;color:var(--text-1);padding:3px 0;}
+.agenda-meta .row{display:flex;justify-content:space-between;font-size:12px;color:var(--text-1);padding:2px 0;}
 .agenda-meta .row b{color:#fff;font-weight:500;}
 
 /* --- 子屏 2：地图 --- */
