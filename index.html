@@ -253,13 +253,29 @@ input{font-family:inherit;}
   padding:14px 14px;border-radius:12px;
   background:linear-gradient(135deg, rgba(139,92,246,.10), rgba(23,16,64,.4));
   border:1px solid var(--line);
+  cursor:pointer;transition:border-color .2s, background .2s;
 }
+.agenda-item:active{transform:scale(.99);}
+.agenda-item.open{border-color:var(--accent-3);background:linear-gradient(135deg, rgba(139,92,246,.22), rgba(23,16,64,.5));}
 .agenda-item .time{font-size:13px;color:var(--accent-3);font-weight:700;font-variant-numeric:tabular-nums;}
 .agenda-item .dot{
   width:8px;height:8px;border-radius:50%;background:var(--accent-2);
   box-shadow:0 0 10px var(--accent-2);justify-self:center;
 }
 .agenda-item .name{font-size:13.5px;color:var(--text-0);line-height:1.4;}
+.agenda-item .arrow-down{
+  grid-column:3;justify-self:end;
+  width:10px;height:10px;border-right:1.5px solid var(--text-2);border-top:1.5px solid var(--text-2);
+  transform:rotate(135deg);margin-top:4px;transition:transform .2s;
+}
+.agenda-item.open .arrow-down{transform:rotate(-45deg);}
+.agenda-detail{
+  grid-column:1 / -1;display:none;
+  margin-top:10px;padding:10px 12px;border-radius:8px;
+  background:rgba(4,3,14,.45);border-left:2px solid var(--accent-2);
+  font-size:12px;color:var(--text-1);line-height:1.7;
+}
+.agenda-item.open .agenda-detail{display:block;animation:fadeIn .25s ease;}
 .agenda-item.start{border-color:var(--line-strong);background:linear-gradient(135deg, rgba(216,180,254,.12), rgba(23,16,64,.4));}
 .agenda-item.start .time{color:var(--gold);}
 .agenda-item.end{opacity:.7;}
@@ -556,7 +572,7 @@ input{font-family:inherit;}
       <div class="snap-screen center-screen">
         <div class="header">
           <h2>大 会 日 程</h2>
-          <span class="pageno">01 / 03</span>
+          <span class="pageno">01 / 02</span>
         </div>
         <div class="agenda-meta">
           <div class="row"><span>会议时间</span><b>2026.11.19（周四）13:00 – 15:30</b></div>
@@ -564,33 +580,40 @@ input{font-family:inherit;}
           <div class="row"><span>详细地址</span><b>丰台区西四环南路 61 号</b></div>
         </div>
         <div class="agenda-list">
-          <div class="agenda-item start">
+          <div class="agenda-item start" onclick="toggleAgenda(this)">
             <div class="time">13:00</div><div class="dot"></div>
-            <div class="name">会议开始 · 签到入场</div>
+            <div class="name">会议开始 · 签到入场<span class="arrow-down"></span></div>
+            <div class="agenda-detail">嘉宾签到、领取参会证件与资料袋，现场茶歇交流。</div>
           </div>
-          <div class="agenda-item">
+          <div class="agenda-item" onclick="toggleAgenda(this)">
             <div class="time">13:05</div><div class="dot"></div>
-            <div class="name">第一部分：Apeiron 发布<br><small style="color:var(--text-2);font-weight:400">技术底座 × 国资委落地 × 专业版</small></div>
+            <div class="name">第一部分：Apeiron 发布<br><small style="color:var(--text-2);font-weight:400">技术底座 × 国资委落地 × 专业版</small><span class="arrow-down"></span></div>
+            <div class="agenda-detail">发布 Apeiron 技术底座能力，解读国资委监管要求落地路径，演示专业版核心功能。</div>
           </div>
-          <div class="agenda-item">
+          <div class="agenda-item" onclick="toggleAgenda(this)">
             <div class="time">13:20</div><div class="dot"></div>
-            <div class="name">第二部分：寻源询价 AI 版发布</div>
+            <div class="name">第二部分：寻源询价 AI 版发布<span class="arrow-down"></span></div>
+            <div class="agenda-detail">AI 驱动的寻源询价全流程演示，包括智能供应商匹配、价格合理性分析与询价单自动生成。</div>
           </div>
-          <div class="agenda-item">
+          <div class="agenda-item" onclick="toggleAgenda(this)">
             <div class="time">14:00</div><div class="dot"></div>
-            <div class="name">第三部分：电商基准价发布</div>
+            <div class="name">第三部分：电商基准价发布<span class="arrow-down"></span></div>
+            <div class="agenda-detail">发布电商基准价体系，覆盖多品类、多平台价格采集与异常价格识别能力。</div>
           </div>
-          <div class="agenda-item">
+          <div class="agenda-item" onclick="toggleAgenda(this)">
             <div class="time">14:30</div><div class="dot"></div>
-            <div class="name">第四部分：联合海光，发布一体机</div>
+            <div class="name">第四部分：联合海光，发布一体机<span class="arrow-down"></span></div>
+            <div class="agenda-detail">联合海光信息发布国产化一体机方案，实现软硬件一体的安全合规部署。</div>
           </div>
-          <div class="agenda-item">
+          <div class="agenda-item" onclick="toggleAgenda(this)">
             <div class="time">15:00</div><div class="dot"></div>
-            <div class="name">第五部分：绿色低碳</div>
+            <div class="name">第五部分：绿色低碳<span class="arrow-down"></span></div>
+            <div class="agenda-detail">介绍采购环节的绿色低碳实践，包括碳足迹追踪与供应商 ESG 评价。</div>
           </div>
-          <div class="agenda-item end">
+          <div class="agenda-item end" onclick="toggleAgenda(this)">
             <div class="time">15:30</div><div class="dot"></div>
-            <div class="name">会议结束 · 自由交流</div>
+            <div class="name">会议结束 · 自由交流<span class="arrow-down"></span></div>
+            <div class="agenda-detail">现场合影、一对一交流与产品体验，结束后可领取资料。</div>
           </div>
         </div>
         <div class="swipe-hint"><div>请向上滑动</div><div class="arrow"></div></div>
@@ -600,7 +623,7 @@ input{font-family:inherit;}
       <div class="snap-screen">
         <div class="header">
           <h2>地 理 位 置</h2>
-          <span class="pageno">02 / 03</span>
+          <span class="pageno">02 / 02</span>
         </div>
         <div class="search-bar">
           <input type="text" id="search-input" value="北京丰台区西四环南路61号京丰宾馆" autocomplete="off">
@@ -626,23 +649,13 @@ input{font-family:inherit;}
             建议标注：正门入口 · 停车位 P · 电梯厅
           </div>
         </div>
-        <div class="swipe-hint"><div>请向上滑动</div><div class="arrow"></div></div>
-      </div>
-
-      <!-- 子屏 3：CTA -->
-      <div class="snap-screen cta-screen">
-        <span class="tag"><span class="dot"></span>RESERVATION</span>
-        <div class="big">席位有限<br><span>诚邀您莅临现场</span></div>
-        <button class="btn-primary" onclick="openForm()">立即报名</button>
+        <div class="swipe-hint"><div>请向上滑动报名</div><div class="arrow"></div></div>
       </div>
 
     </div>
   </section>
 
-</div>
-
-<div class="overlay" id="form-overlay">
-  <!-- ==================== Page 3 表单（覆盖浮层） ==================== -->
+  <!-- ==================== Page 3 报名表单（普通翻页页） ==================== -->
   <section class="page" id="page-form">
     <div class="form-scroll">
       <div class="form-wrap">
@@ -693,6 +706,7 @@ input{font-family:inherit;}
       </div>
     </div>
   </section>
+
 </div>
 
 <div class="overlay" id="thanks-overlay">
@@ -747,51 +761,28 @@ function goTo(idx){
 }
 
 /* ============================================================
-   全屏浮层控制：表单（两侧拉开）/ 感谢页（淡入）
-   —— 表单提交后关闭浮层，禁止上滑返回表单页
+   全屏浮层：感谢页（表单提交后弹出，覆盖在翻页容器之上）
 ============================================================ */
-const formOverlay = document.getElementById('form-overlay');
 const thanksOverlay = document.getElementById('thanks-overlay');
 
-function openForm(){
-  thanksOverlay.classList.remove('open','fade');
-  thanksOverlay.style.display = 'none';
-  formOverlay.classList.remove('open','fade');
-  void formOverlay.offsetWidth;           // 重置动画
-  formOverlay.style.display = 'block';
-  formOverlay.classList.add('open');      // 幕布从中间向两侧拉开
-  formOverlay.scrollTop = 0;
-}
-
 function openThanks(){
-  formOverlay.classList.remove('open','fade');
-  formOverlay.style.display = 'none';     // 表单页即关闭，无法返回
   thanksOverlay.classList.remove('open','fade');
   void thanksOverlay.offsetWidth;
   thanksOverlay.style.display = 'block';
-  thanksOverlay.classList.add('open','fade'); // 感谢页淡入，不沿用滑动效果
+  thanksOverlay.classList.add('open','fade');
 }
 
 /* ============================================================
-   第二页内部滚动：防止穿透到外层 deck
-   当 detailScroll 滚到顶再上滑 / 滚到底再下滑时，让外层接管
+   日程项点击展开/收起详情
+============================================================ */
+function toggleAgenda(el){
+  el.classList.toggle('open');
+}
+
+/* ============================================================
+   第二页内部滚动
 ============================================================ */
 const detail = document.getElementById('detailScroll');
-detail.addEventListener('touchmove', function(e){
-  // 让浏览器默认处理内层滚动即可；scroll-snap 已保证体验
-}, {passive:true});
-
-/* CTA 屏（detailScroll 最后一屏）禁止向上滑穿透到外层 deck，只能点按钮跳转 */
-let _touchStartY = 0;
-detail.addEventListener('touchstart', function(e){
-  _touchStartY = e.touches[0].clientY;
-}, {passive:true});
-detail.addEventListener('touchmove', function(e){
-  const atBottom = detail.scrollTop + detail.clientHeight >= detail.scrollHeight - 5;
-  if(!atBottom) return;
-  const dy = e.touches[0].clientY - _touchStartY;
-  if(dy < 0){ e.preventDefault(); } // 手指继续上滑时锁死
-}, {passive:false});
 
 /* ============================================================
    高德地图初始化
