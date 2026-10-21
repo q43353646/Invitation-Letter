@@ -165,10 +165,12 @@ input{font-family:inherit;}
 }
 /* 通用：每屏底部上滑提示（与首页一致） */
 .swipe-hint{
-  position:absolute;left:50%;bottom:calc(24px + var(--safe-b));transform:translateX(-50%);
-  display:flex;flex-direction:column;align-items:center;gap:8px;
-  color:var(--text-2);font-size:12px;letter-spacing:4px;
+  position:absolute;left:50%;bottom:calc(16px + var(--safe-b));transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  color:var(--text-2);font-size:11px;letter-spacing:4px;
   pointer-events:none;z-index:5;
+  padding:6px 14px;border-radius:999px;
+  background:rgba(4,3,14,.7);backdrop-filter:blur(6px);
 }
 .swipe-hint .arrow{
   width:22px;height:22px;border-right:2px solid var(--accent-3);border-top:2px solid var(--accent-3);
@@ -228,8 +230,8 @@ input{font-family:inherit;}
   scroll-behavior:smooth;
   overscroll-behavior:auto; /* 到顶下滑/到底上滑可穿透到外层，支持退回上一页 */
 }
-.snap-screen.center-screen{justify-content:center;}
-.snap-screen.center-screen .agenda-list{flex:0 1 auto;}
+.snap-screen.center-screen{justify-content:flex-start;}
+.snap-screen.center-screen .agenda-list{flex:1 1 auto;min-height:0;overflow-y:auto;padding-bottom:48px;}
 .snap-screen{
   height:100vh;height:100dvh;
   scroll-snap-align:start;scroll-snap-stop:always;
